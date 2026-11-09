@@ -6,26 +6,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#080d19">
 <title>Larrosa Growth Group | Business Growth & Lead Generation</title>
-<meta name="description" content="Larrosa Growth Group helps businesses grow through digital marketing and lead generation.">
+<meta name="description" content="Larrosa Growth Group helps businesses grow through marketing and lead generation.">
+
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:#080d19;color:#f5f7fc;font-family:Arial,sans-serif;line-height:1.6}
-header{padding:20px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #233653}
+header{padding:18px 7%;display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid #233653}
 .logo{font-size:19px;font-weight:800;letter-spacing:1px}
 .logo span{color:#3995ff}
-nav a{color:#d2dced;text-decoration:none;margin-left:18px;font-size:14px}
-.hero{text-align:center;padding:85px 7%;background:radial-gradient(ellipse at top,#153b70,#080d19 70%)}
+nav{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+nav a{color:#d2dced;text-decoration:none;font-size:14px}
+.lang{display:flex;border:1px solid #344764;border-radius:30px;overflow:hidden}
+.lang button{width:auto;padding:8px 12px;border:0;border-radius:0;background:transparent;color:#d2dced;font-size:13px}
+.lang button.active{background:#237ce5;color:white}
+.hero{text-align:center;padding:82px 7%;background:radial-gradient(ellipse at top,#153b70,#080d19 70%)}
 .tag{color:#69b0ff;text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:bold}
 h1{font-size:clamp(38px,7vw,65px);line-height:1.1;max-width:850px;margin:18px auto}
 h1 span{color:#3995ff}
-.hero p{color:#bac9de;max-width:650px;margin:20px auto;font-size:18px}
+.hero p{color:#bac9de;max-width:680px;margin:20px auto;font-size:18px}
 .btn,button{display:inline-block;background:#237ce5;color:white;padding:14px 22px;border:0;border-radius:8px;text-decoration:none;font-weight:bold;cursor:pointer;font-size:15px}
-.btn{margin-top:15px}
+.btn{margin:10px 5px 0}
 button:hover,.btn:hover{background:#1264c5}
 section{padding:65px 7%}
 .section-title{text-align:center;font-size:32px;margin:0 0 10px}
-.section-sub{text-align:center;color:#aab8ce;max-width:680px;margin:0 auto 35px}
+.section-sub{text-align:center;color:#aab8ce;max-width:700px;margin:0 auto 35px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;max-width:1100px;margin:auto}
 .card{background:#101a2b;border:1px solid #263b59;border-radius:14px;padding:26px}
 .card h3{font-size:22px;margin-top:0}
@@ -35,7 +40,7 @@ form{display:grid;gap:13px;margin-top:18px}
 input,select,textarea{width:100%;padding:14px;border-radius:7px;border:1px solid #344764;background:#080f1d;color:white;font:inherit}
 input::placeholder,textarea::placeholder{color:#8998ae}
 textarea{min-height:100px;resize:vertical}
-button{width:100%}
+button.submit{width:100%}
 .field-label{font-weight:bold;font-size:14px;color:#e3eaf5}
 .radio-option,.consent{display:flex;gap:10px;align-items:flex-start;color:#c1cde0;font-size:14px}
 .radio-option input,.consent input{width:auto;margin-top:5px;flex-shrink:0}
@@ -47,222 +52,581 @@ button{width:100%}
 footer{padding:30px 7%;border-top:1px solid #233653;text-align:center;color:#91a2bb;font-size:13px}
 footer a{color:#70b5ff}
 .hidden{display:none}
-@media(max-width:650px){
-header{padding:16px 5%;flex-wrap:wrap;gap:12px}
-nav{width:100%;display:flex;gap:16px;flex-wrap:wrap}
-nav a{margin:0}
-.hero{padding:65px 6%}
+
+@media(max-width:700px){
+header{padding:16px 5%;flex-wrap:wrap}
+nav{width:100%;gap:14px}
+.hero{padding:60px 6%}
 section{padding:50px 6%}
 }
 </style>
 </head>
+
 <body>
 
 <header>
   <div class="logo">LARROSA <span>GROWTH GROUP</span></div>
+
   <nav>
-    <a href="#business">For Businesses</a>
-    <a href="#services">Find a Service</a>
+    <a href="#business" data-en="For Businesses" data-es="Para negocios">For Businesses</a>
+    <a href="#services" data-en="Find a Service" data-es="Buscar un servicio">Find a Service</a>
+
+    <div class="lang" aria-label="Language">
+      <button type="button" id="enBtn" class="active">EN</button>
+      <button type="button" id="esBtn">ES</button>
+    </div>
   </nav>
 </header>
 
 <main>
+
 <div class="hero">
-  <div class="tag">Marketing • Leads • Growth</div>
-  <h1>Helping Businesses <span>Grow.</span></h1>
-  <p>We help businesses connect with potential customers through digital marketing and lead generation.</p>
-  <a class="btn" href="#business">Grow Your Business</a>
-  <a class="btn" href="#services" style="background:#172b48;margin-left:8px">Find a Service</a>
+  <div class="tag" data-en="Marketing • Leads • Growth" data-es="Marketing • Prospectos • Crecimiento">Marketing • Leads • Growth</div>
+
+  <h1>
+    <span data-en="Helping Businesses" data-es="Ayudamos a los negocios">Helping Businesses</span>
+    <span data-en="Grow." data-es="a crecer.">Grow.</span>
+  </h1>
+
+  <p data-en="We help businesses connect with potential customers through digital marketing and lead generation."
+     data-es="Ayudamos a los negocios a conectarse con clientes potenciales mediante marketing digital y generación de prospectos.">
+    We help businesses connect with potential customers through digital marketing and lead generation.
+  </p>
+
+  <a class="btn" href="#business" data-en="Grow Your Business" data-es="Haga crecer su negocio">Grow Your Business</a>
+
+  <a class="btn" href="#services" style="background:#172b48"
+     data-en="Find a Service" data-es="Buscar un servicio">Find a Service</a>
 </div>
 
 <section id="business">
-  <h2 class="section-title">For Business Owners</h2>
-  <p class="section-sub">Looking for more customers and new business opportunities? Let's talk about growing your business.</p>
+
+  <h2 class="section-title" data-en="For Business Owners" data-es="Para dueños de negocios">For Business Owners</h2>
+
+  <p class="section-sub"
+     data-en="Looking for more customers and new business opportunities? Let's talk about growing your business."
+     data-es="¿Busca más clientes y nuevas oportunidades? Hablemos sobre cómo hacer crecer su negocio.">
+    Looking for more customers and new business opportunities? Let's talk about growing your business.
+  </p>
+
   <div class="grid">
+
     <div class="card">
-      <h3>Grow Your Business</h3>
-      <p>We help businesses reach potential customers through advertising, targeted campaigns, and lead generation.</p>
-      <p class="blue"><strong>More visibility. More inquiries. More opportunities.</strong></p>
+      <h3 data-en="Grow Your Business" data-es="Haga crecer su negocio">Grow Your Business</h3>
+
+      <p data-en="We help businesses reach potential customers through advertising, targeted campaigns, and lead generation."
+         data-es="Ayudamos a los negocios a llegar a clientes potenciales mediante publicidad, campañas dirigidas y generación de prospectos.">
+        We help businesses reach potential customers through advertising, targeted campaigns, and lead generation.
+      </p>
+
+      <p class="blue">
+        <strong data-en="More visibility. More inquiries. More opportunities."
+                data-es="Más visibilidad. Más consultas. Más oportunidades.">
+          More visibility. More inquiries. More opportunities.
+        </strong>
+      </p>
+
       <div class="steps">
-        <div class="step"><div class="number">1</div><span>Tell us about your business.</span></div>
-        <div class="step"><div class="number">2</div><span>Discuss your customer goals.</span></div>
-        <div class="step"><div class="number">3</div><span>Explore a lead-generation strategy.</span></div>
+        <div class="step"><div class="number">1</div><span data-en="Tell us about your business." data-es="Cuéntenos sobre su negocio.">Tell us about your business.</span></div>
+        <div class="step"><div class="number">2</div><span data-en="Discuss your customer goals." data-es="Hablemos de sus metas para conseguir clientes.">Discuss your customer goals.</span></div>
+        <div class="step"><div class="number">3</div><span data-en="Explore a lead-generation strategy." data-es="Explore una estrategia para generar prospectos.">Explore a lead-generation strategy.</span></div>
       </div>
     </div>
+
     <div class="card">
-      <h3>Let's Work Together</h3>
-      <p>Tell us how to reach you and what kind of business you operate.</p>
+      <h3 data-en="Let's Work Together" data-es="Trabajemos juntos">Let's Work Together</h3>
+
+      <p data-en="Tell us how to reach you and what kind of business you operate."
+         data-es="Díganos cómo contactarle y qué tipo de negocio tiene.">
+        Tell us how to reach you and what kind of business you operate.
+      </p>
+
       <form action="https://formsubmit.co/larrosagrowthllc@gmail.com" method="POST">
+
         <input type="hidden" name="_subject" value="New Business Inquiry - Larrosa Growth Group">
         <input type="hidden" name="_template" value="table">
         <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off">
-        <input name="Name" placeholder="Your full name" required>
-        <input name="Business name" placeholder="Business name" required>
-        <input type="tel" name="Phone" placeholder="Phone number" required>
-        <input type="email" name="Email" placeholder="Email address" required>
-        <input name="Industry" placeholder="What industry is your business in?" required>
-        <input name="Service area" placeholder="City or service area">
-        <textarea name="Business goals" placeholder="Tell us about your business goals"></textarea>
-        <button type="submit">Send Business Inquiry</button>
+        <input type="hidden" name="Preferred language" class="language-field" value="English">
+
+        <input name="Name" placeholder="Your full name"
+          data-placeholder-en="Your full name" data-placeholder-es="Nombre completo" required>
+
+        <input name="Business name" placeholder="Business name"
+          data-placeholder-en="Business name" data-placeholder-es="Nombre del negocio" required>
+
+        <input type="tel" name="Phone" placeholder="Phone number"
+          data-placeholder-en="Phone number" data-placeholder-es="Número de teléfono" required>
+
+        <input type="email" name="Email" placeholder="Email address"
+          data-placeholder-en="Email address" data-placeholder-es="Correo electrónico" required>
+
+        <input name="Industry" placeholder="What industry is your business in?"
+          data-placeholder-en="What industry is your business in?"
+          data-placeholder-es="¿En qué industria trabaja su negocio?" required>
+
+        <input name="Service area" placeholder="City or service area"
+          data-placeholder-en="City or service area"
+          data-placeholder-es="Ciudad o área de servicio">
+
+        <textarea name="Business goals" placeholder="Tell us about your business goals"
+          data-placeholder-en="Tell us about your business goals"
+          data-placeholder-es="Cuéntenos las metas de su negocio"></textarea>
+
+        <button class="submit" type="submit"
+          data-en="Send Business Inquiry" data-es="Enviar consulta del negocio">
+          Send Business Inquiry
+        </button>
+
       </form>
     </div>
+
   </div>
 </section>
 
 <section id="services" style="background:#0c1423">
-  <h2 class="section-title">What Service Do You Need?</h2>
-  <p class="section-sub">Choose a category, select the specific service, and submit your request. We can connect you with an independent service provider.</p>
+
+  <h2 class="section-title" data-en="What Service Do You Need?" data-es="¿Qué servicio necesita?">What Service Do You Need?</h2>
+
+  <p class="section-sub"
+     data-en="Choose a category, select the specific service, and submit your request. We can connect you with an independent service provider."
+     data-es="Elija una categoría, seleccione el servicio específico y envíe su solicitud. Podemos conectarle con un proveedor de servicios independiente.">
+    Choose a category, select the specific service, and submit your request.
+  </p>
 
   <div class="grid">
+
     <div class="card">
-      <h3>Request a Service</h3>
+      <h3 data-en="Request a Service" data-es="Solicitar un servicio">Request a Service</h3>
+
       <form id="customerForm" action="https://formsubmit.co/larrosagrowthllc@gmail.com" method="POST">
+
         <input type="hidden" name="_subject" value="New Customer Lead - Larrosa Growth Group">
         <input type="hidden" name="_template" value="table">
         <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="Preferred language" class="language-field" value="English">
 
-        <label class="field-label" for="category">1. Choose a service category</label>
+        <label class="field-label" for="category"
+          data-en="1. Choose a service category"
+          data-es="1. Elija una categoría de servicio">
+          1. Choose a service category
+        </label>
+
         <select id="category" name="Service category" required>
           <option value="">Select a category</option>
-          <option>HVAC / Air Conditioning</option>
-          <option>Plumbing</option>
-          <option>Electrical</option>
-          <option>House Cleaning</option>
-          <option>Roofing</option>
-          <option>Moving</option>
-          <option>Landscaping</option>
-          <option>Painting</option>
-          <option>Pest Control</option>
-          <option>Other</option>
         </select>
 
-        <label class="field-label" for="specificService">2. What specific service do you need?</label>
+        <label class="field-label" for="specificService"
+          data-en="2. What specific service do you need?"
+          data-es="2. ¿Qué servicio específico necesita?">
+          2. What specific service do you need?
+        </label>
+
         <select id="specificService" name="Specific service needed" required disabled>
           <option value="">Choose a category first</option>
         </select>
 
-        <label class="field-label" for="customerName">3. Your contact information</label>
-        <input id="customerName" name="Customer name" placeholder="Full name" required>
-        <input name="Phone number" type="tel" placeholder="Phone number" required>
-        <input name="Email address" type="email" placeholder="Email address">
-        <input name="ZIP code" placeholder="ZIP code" required>
-        <textarea name="Additional details" placeholder="Tell us more about the service you need"></textarea>
+        <label class="field-label" for="customerName"
+          data-en="3. Your contact information"
+          data-es="3. Su información de contacto">
+          3. Your contact information
+        </label>
+
+        <input id="customerName" name="Customer name" placeholder="Full name"
+          data-placeholder-en="Full name" data-placeholder-es="Nombre completo" required>
+
+        <input name="Phone number" type="tel" placeholder="Phone number"
+          data-placeholder-en="Phone number" data-placeholder-es="Número de teléfono" required>
+
+        <input name="Email address" type="email" placeholder="Email address"
+          data-placeholder-en="Email address" data-placeholder-es="Correo electrónico">
+
+        <input name="ZIP code" placeholder="ZIP code"
+          data-placeholder-en="ZIP code" data-placeholder-es="Código postal" required>
+
+        <textarea name="Additional details"
+          placeholder="Tell us more about the service you need"
+          data-placeholder-en="Tell us more about the service you need"
+          data-placeholder-es="Cuéntenos más sobre el servicio que necesita"></textarea>
 
         <div class="radio-group">
-          <span class="field-label">4. Permission to share your request</span>
+
+          <span class="field-label"
+            data-en="4. Permission to share your request"
+            data-es="4. Permiso para compartir su solicitud">
+            4. Permission to share your request
+          </span>
+
           <label class="consent">
-            <input type="checkbox" name="Permission to share information" value="Yes, I agree" required>
-            <span>I agree that Larrosa Growth Group may share my information with an independent service provider relevant to my request so they can contact me about the service I selected.</span>
+            <input type="checkbox" name="Permission to share information"
+              value="Yes, I agree" required>
+
+            <span data-en="I agree that Larrosa Growth Group may share my information with an independent service provider relevant to my request so they can contact me about the service I selected."
+              data-es="Acepto que Larrosa Growth Group comparta mi información con un proveedor de servicios independiente relacionado con mi solicitud para que pueda contactarme sobre el servicio que seleccioné.">
+              I agree that Larrosa Growth Group may share my information with an independent service provider relevant to my request so they can contact me about the service I selected.
+            </span>
           </label>
+
         </div>
 
         <div class="radio-group">
-          <span class="field-label">5. Do you agree to receive a phone call about this specific request?</span>
+
+          <span class="field-label"
+            data-en="5. Do you agree to receive a phone call about this specific request?"
+            data-es="5. ¿Acepta recibir una llamada sobre esta solicitud específica?">
+            5. Do you agree to receive a phone call about this specific request?
+          </span>
+
           <label class="radio-option">
-            <input type="radio" name="Permission to receive phone calls" value="Yes, I agree to receive a phone call" required>
-            <span>Yes, I agree to receive a phone call from the independent service provider about my request.</span>
+            <input type="radio" name="Permission to receive phone calls"
+              value="Yes, I agree to receive a phone call" required>
+
+            <span data-en="Yes, I agree to receive a phone call from the independent service provider about my request."
+              data-es="Sí, acepto recibir una llamada del proveedor de servicios independiente sobre mi solicitud.">
+              Yes, I agree to receive a phone call from the independent service provider about my request.
+            </span>
           </label>
+
           <label class="radio-option">
-            <input type="radio" name="Permission to receive phone calls" value="No, I do not agree to receive a phone call">
-            <span>No, I do not agree to receive a phone call.</span>
+            <input type="radio" name="Permission to receive phone calls"
+              value="No, I do not agree to receive a phone call">
+
+            <span data-en="No, I do not agree to receive a phone call."
+              data-es="No, no acepto recibir una llamada telefónica.">
+              No, I do not agree to receive a phone call.
+            </span>
           </label>
-          <p class="note">This choice applies to calls about this specific request, not unrelated marketing calls. Selecting no does not prevent you from submitting your request.</p>
+
+          <p class="note"
+            data-en="This choice applies to calls about this specific request, not unrelated marketing calls. Selecting no does not prevent you from submitting your request."
+            data-es="Esta elección se aplica a llamadas sobre esta solicitud específica, no a llamadas de marketing no relacionadas. Seleccionar no no le impide enviar su solicitud.">
+            This choice applies to calls about this specific request, not unrelated marketing calls. Selecting no does not prevent you from submitting your request.
+          </p>
+
         </div>
 
-        <p class="note">Submitting this form does not book an appointment or guarantee service. Your request is sent to Larrosa Growth Group for review and forwarding to an appropriate independent provider, subject to your consent.</p>
-        <button type="submit">Submit Service Request</button>
+        <p class="note"
+          data-en="Submitting this form does not book an appointment or guarantee service. Your request is sent to Larrosa Growth Group for review and forwarding to an appropriate independent provider, subject to your consent."
+          data-es="Enviar este formulario no reserva una cita ni garantiza el servicio. Larrosa Growth Group revisará su solicitud y podrá enviarla a un proveedor independiente adecuado, sujeto a su consentimiento.">
+          Submitting this form does not book an appointment or guarantee service.
+        </p>
+
+        <button class="submit" type="submit"
+          data-en="Submit Service Request" data-es="Enviar solicitud de servicio">
+          Submit Service Request
+        </button>
+
       </form>
     </div>
 
     <div class="card">
-      <h3>How It Works</h3>
+
+      <h3 data-en="How It Works" data-es="Cómo funciona">How It Works</h3>
+
       <div class="steps">
-        <div class="step"><div class="number">1</div><div><strong>Choose your service</strong><p>Select an industry and the specific help you need.</p></div></div>
-        <div class="step"><div class="number">2</div><div><strong>Submit your request</strong><p>Provide your contact information and consent choices.</p></div></div>
-        <div class="step"><div class="number">3</div><div><strong>Get connected</strong><p>Your request can be shared with an independent provider who may follow up according to your permissions.</p></div></div>
+
+        <div class="step">
+          <div class="number">1</div>
+          <div>
+            <strong data-en="Choose your service" data-es="Elija su servicio">Choose your service</strong>
+            <p data-en="Select an industry and the specific help you need."
+              data-es="Seleccione una categoría y la ayuda específica que necesita.">
+              Select an industry and the specific help you need.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="number">2</div>
+          <div>
+            <strong data-en="Submit your request" data-es="Envíe su solicitud">Submit your request</strong>
+            <p data-en="Provide your contact information and consent choices."
+              data-es="Proporcione su información de contacto y sus opciones de consentimiento.">
+              Provide your contact information and consent choices.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="number">3</div>
+          <div>
+            <strong data-en="Get connected" data-es="Conéctese con un proveedor">Get connected</strong>
+            <p data-en="Your request can be shared with an independent provider who may follow up according to your permissions."
+              data-es="Su solicitud puede compartirse con un proveedor independiente, quien podrá darle seguimiento según los permisos que otorgue.">
+              Your request can be shared with an independent provider who may follow up according to your permissions.
+            </p>
+          </div>
+        </div>
+
       </div>
+
       <hr style="border-color:#263b59;margin:25px 0">
-      <h3>Our Role</h3>
-      <p>Larrosa Growth Group provides marketing and lead-generation services. We connect interested customers with independent businesses. We do not personally perform the services listed on this website.</p>
+
+      <h3 data-en="Our Role" data-es="Nuestro papel">Our Role</h3>
+
+      <p data-en="Larrosa Growth Group provides marketing and lead-generation services. We connect interested customers with independent businesses. We do not personally perform the services listed on this website."
+        data-es="Larrosa Growth Group ofrece servicios de marketing y generación de prospectos. Conectamos a clientes interesados con negocios independientes. No realizamos personalmente los servicios anunciados en este sitio web.">
+        Larrosa Growth Group provides marketing and lead-generation services.
+      </p>
+
     </div>
+
   </div>
 </section>
 
 <section id="about">
-  <h2 class="section-title">About Larrosa Growth Group</h2>
-  <p class="section-sub">Our goal is to help businesses grow by connecting them with people looking for their services. We work across different industries and focus on creating opportunities through marketing and lead generation.</p>
+
+  <h2 class="section-title"
+    data-en="About Larrosa Growth Group"
+    data-es="Sobre Larrosa Growth Group">
+    About Larrosa Growth Group
+  </h2>
+
+  <p class="section-sub"
+    data-en="Our goal is to help businesses grow by connecting them with people looking for their services. We work across different industries and focus on creating opportunities through marketing and lead generation."
+    data-es="Nuestro objetivo es ayudar a los negocios a crecer conectándolos con personas que buscan sus servicios. Trabajamos con distintas industrias y nos enfocamos en crear oportunidades mediante marketing y generación de prospectos.">
+    Our goal is to help businesses grow by connecting them with people looking for their services.
+  </p>
+
 </section>
+
 </main>
 
 <footer>
+
   <strong>LARROSA GROWTH GROUP, LLC</strong>
-  <p>Email: <a href="mailto:larrosagrowthllc@gmail.com">larrosagrowthllc@gmail.com</a></p>
-  <p><a href="privacy.html">Privacy Policy</a></p>
-  <p>© 2026 Larrosa Growth Group, LLC. All rights reserved.</p>
+
+  <p>Email:
+    <a href="mailto:larrosagrowthllc@gmail.com">larrosagrowthllc@gmail.com</a>
+  </p>
+
+  <p>
+    <a href="privacy.html"
+      data-en="Privacy Policy"
+      data-es="Política de privacidad">
+      Privacy Policy
+    </a>
+  </p>
+
+  <p>© 2026 Larrosa Growth Group, LLC.
+    <span data-en="All rights reserved." data-es="Todos los derechos reservados.">
+      All rights reserved.
+    </span>
+  </p>
+
 </footer>
 
 <script>
-const services = {
-  "HVAC / Air Conditioning": [
-    "AC repair","AC not cooling","AC installation",
-    "AC maintenance","AC replacement","Other AC issue"
-  ],
-  "Plumbing": [
-    "Leaking pipe","Drain cleaning","Clogged toilet",
-    "Water heater repair","Pipe installation","Other plumbing issue"
-  ],
-  "Electrical": [
-    "Electrical repair","Outlet installation","Lighting installation",
-    "Electrical panel upgrade","Other electrical issue"
-  ],
-  "House Cleaning": [
-    "Standard cleaning","Deep cleaning","Move-in / move-out cleaning",
-    "Office cleaning","Other cleaning service"
-  ],
-  "Roofing": [
-    "Roof repair","Roof replacement","Roof inspection",
-    "Roof leak","Other roofing service"
-  ],
-  "Moving": [
-    "Local moving","Long-distance moving","Packing services",
-    "Furniture moving","Other moving service"
-  ],
-  "Landscaping": [
-    "Lawn maintenance","Landscape design","Tree trimming",
-    "Irrigation","Other landscaping service"
-  ],
-  "Painting": [
-    "Interior painting","Exterior painting",
-    "Commercial painting","Other painting service"
-  ],
-  "Pest Control": [
-    "Termite treatment","Rodent control",
-    "General pest control","Other pest control service"
-  ],
-  "Other": ["Other service request"]
+
+const catalog = {
+
+"HVAC / Air Conditioning":{
+en:"HVAC / Air Conditioning",
+es:"Aire acondicionado (HVAC)",
+items:[
+["AC repair","Reparación de aire acondicionado"],
+["AC not cooling","El aire no enfría"],
+["AC installation","Instalación de aire acondicionado"],
+["AC maintenance","Mantenimiento de aire acondicionado"],
+["AC replacement","Reemplazo de aire acondicionado"],
+["Other AC issue","Otro problema de aire acondicionado"]
+]},
+
+"Plumbing":{
+en:"Plumbing",
+es:"Plomería",
+items:[
+["Leaking pipe","Tubería con fuga"],
+["Drain cleaning","Limpieza de desagües"],
+["Clogged toilet","Inodoro tapado"],
+["Water heater repair","Reparación de calentador de agua"],
+["Pipe installation","Instalación de tuberías"],
+["Other plumbing issue","Otro problema de plomería"]
+]},
+
+"Electrical":{
+en:"Electrical",
+es:"Electricidad",
+items:[
+["Electrical repair","Reparación eléctrica"],
+["Outlet installation","Instalación de tomacorrientes"],
+["Lighting installation","Instalación de iluminación"],
+["Electrical panel upgrade","Actualización del panel eléctrico"],
+["Other electrical issue","Otro problema eléctrico"]
+]},
+
+"House Cleaning":{
+en:"House Cleaning",
+es:"Limpieza de casas",
+items:[
+["Standard cleaning","Limpieza regular"],
+["Deep cleaning","Limpieza profunda"],
+["Move-in / move-out cleaning","Limpieza al mudarse"],
+["Office cleaning","Limpieza de oficinas"],
+["Other cleaning service","Otro servicio de limpieza"]
+]},
+
+"Roofing":{
+en:"Roofing",
+es:"Techos",
+items:[
+["Roof repair","Reparación de techo"],
+["Roof replacement","Reemplazo de techo"],
+["Roof inspection","Inspección de techo"],
+["Roof leak","Filtración en el techo"],
+["Other roofing service","Otro servicio de techos"]
+]},
+
+"Moving":{
+en:"Moving",
+es:"Mudanzas",
+items:[
+["Local moving","Mudanza local"],
+["Long-distance moving","Mudanza de larga distancia"],
+["Packing services","Servicios de embalaje"],
+["Furniture moving","Mudanza de muebles"],
+["Other moving service","Otro servicio de mudanza"]
+]},
+
+"Landscaping":{
+en:"Landscaping",
+es:"Jardinería y paisajismo",
+items:[
+["Lawn maintenance","Mantenimiento de césped"],
+["Landscape design","Diseño de jardines"],
+["Tree trimming","Poda de árboles"],
+["Irrigation","Riego"],
+["Other landscaping service","Otro servicio de paisajismo"]
+]},
+
+"Painting":{
+en:"Painting",
+es:"Pintura",
+items:[
+["Interior painting","Pintura interior"],
+["Exterior painting","Pintura exterior"],
+["Commercial painting","Pintura comercial"],
+["Other painting service","Otro servicio de pintura"]
+]},
+
+"Pest Control":{
+en:"Pest Control",
+es:"Control de plagas",
+items:[
+["Termite treatment","Tratamiento contra termitas"],
+["Rodent control","Control de roedores"],
+["General pest control","Control general de plagas"],
+["Other pest control service","Otro servicio de control de plagas"]
+]},
+
+"Other":{
+en:"Other",
+es:"Otro",
+items:[
+["Other service request","Otra solicitud de servicio"]
+]}
+
 };
 
-const category = document.getElementById("category");
-const specific = document.getElementById("specificService");
+const category=document.getElementById("category");
+const specific=document.getElementById("specificService");
 
-category.addEventListener("change", function () {
-  const selected = this.value;
-  specific.innerHTML = "";
+let language="en";
 
-  if (!selected || !services[selected]) {
-    specific.disabled = true;
-    specific.add(new Option("Choose a category first", ""));
+function fillCategory(){
+
+  category.innerHTML="";
+
+  const first=new Option(
+    language==="en"?"Select a category":"Seleccione una categoría",
+    ""
+  );
+
+  category.add(first);
+
+  Object.keys(catalog).forEach(key=>{
+    category.add(new Option(catalog[key][language],key));
+  });
+
+}
+
+function fillSpecific(){
+
+  const key=category.value;
+  specific.innerHTML="";
+
+  if(!key){
+    specific.disabled=true;
+    specific.add(new Option(
+      language==="en"?"Choose a category first":"Primero elija una categoría",
+      ""
+    ));
     return;
   }
 
-  specific.disabled = false;
-  specific.add(new Option("Select a specific service", ""));
+  specific.disabled=false;
 
-  services[selected].forEach(function(service) {
-    specific.add(new Option(service, service));
+  specific.add(new Option(
+    language==="en"?"Select a specific service":"Seleccione un servicio específico",
+    ""
+  ));
+
+  catalog[key].items.forEach(([en,es])=>{
+    specific.add(new Option(language==="en"?en:es,en));
   });
+
+}
+
+function setLanguage(lang){
+
+  language=lang;
+  document.documentElement.lang=lang;
+
+  document.querySelectorAll("[data-en][data-es]").forEach(el=>{
+    el.textContent=el.dataset[lang];
+  });
+
+  document.querySelectorAll("[data-placeholder-en]").forEach(el=>{
+    el.placeholder=el.dataset[
+      lang==="en"?"placeholderEn":"placeholderEs"
+    ];
+  });
+
+  document.getElementById("enBtn").classList.toggle("active",lang==="en");
+  document.getElementById("esBtn").classList.toggle("active",lang==="es");
+
+  document.querySelectorAll(".language-field").forEach(el=>{
+    el.value=lang==="en"?"English":"Español";
+  });
+
+  fillCategory();
+  fillSpecific();
+
+  try{
+    localStorage.setItem("lgg-language",lang);
+  }catch(e){}
+
+}
+
+category.addEventListener("change",fillSpecific);
+
+document.getElementById("enBtn").addEventListener("click",()=>{
+  setLanguage("en");
 });
+
+document.getElementById("esBtn").addEventListener("click",()=>{
+  setLanguage("es");
+});
+
+let initial="en";
+
+try{
+  initial=localStorage.getItem("lgg-language")||
+    ((navigator.language||"").toLowerCase().startsWith("es")?"es":"en");
+}catch(e){}
+
+setLanguage(initial);
+
 </script>
+
 </body>
 </html>
-
